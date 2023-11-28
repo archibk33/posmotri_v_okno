@@ -37,7 +37,7 @@ ol {
     list-style: none;
 }
 
-/* ------ШАГ-1-------  */
+/* ------STAGE-1-------  */
 
 .content {
     display: flex;
@@ -58,7 +58,24 @@ ol {
     flex-direction: column;
     position: relative;
     block-size: 220px;
-    overflow-y: auto;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.3s ease; /* Плавное изменение opacity */
+}
+
+.content__list-item {
+    display: flex;
+    align-items: flex-start;
+    margin-block-end: 30px;
+    inline-size: 389px;
+}
+
+.content__list-item:last-child {
+    margin-block-end: 0;
+}
+
+.content__list-item:has(.content__card-link_current) {
+    background-color: #545050;
 }
 
 .content__details {
@@ -73,11 +90,13 @@ ol {
 Вопрос 1. Это легальный метод? Я просто поставил
 себе задачу, сделать приятный скрол, чтобы он вписывался в общий дизайн.
 
-Вопрос 2. Я поигрался с настройками и смог его вообще убрать. Так можно делать? */
+Вопрос 2. Я поигрался с настройками и смог его вообще убрать. Так можно делать?
+
+Вопрос 3. Я не смог догадаться, как сделать плавное исчезновение и появление курсора :(. Не подскажете, как сделать? С:
+*/
 
 .content__list::-webkit-scrollbar {
-    width: 4px;
-    background-color: #545050;
+    width: 5px;
 }
 
 .content__list::-webkit-scrollbar-thumb {
@@ -85,6 +104,71 @@ ol {
     border-radius: 5px;
 }
 
-/* ------ШАГ-2-------  */
+.content__list:hover {
+    overflow-y: auto; /* Показываем полосу прокрутки при наведении курсора */
+    opacity: 1;
+}
+
+/* ------STAGE-2-------  */
+
+.result__video-container {
+    margin-block-end: 15px;
+    position: relative;
+}
+
+/*--<div class="result__video-container">--*/
+
+.result__video {
+    object-position: center;
+    block-size: 379px;
+    inline-size: 709px;
+    object-fit: cover;
+
+}
+
+/*  <template class="cards-list-item-template">
+      <li class="content__list-item">  */
+
+.content__list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-block-end: 20px;
+}
+
+.content__list-item:last-child {
+    margin-bottom: 0; /* Убирает отступ у последнего элемента */
+}
+
+.content__list-item:has(.content__card-link_current) {
+    background-color: #231717;
+}
+
+.content__video-card {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+.content__video-card-thumbnail {
+    block-size: 100px;
+    object-fit: cover;
+    object-position: center;
+    inline-size: 189px;
+
+}
+
+.content__video-card-description-container {
+    display: flex;
+    flex-direction: column;
+    inline-size: 200px;
+    gap: 7px;
+}
+
+/* ------STAGE-3-------  */
+
+
+
+
 
 
