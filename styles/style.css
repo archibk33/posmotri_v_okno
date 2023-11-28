@@ -1,21 +1,21 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  block-size: 100%;
+    block-size: 100%;
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
+    inline-size: 1200px;
+    block-size: 100%;
+    margin: auto;
+    color: #fff;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 18px;
+    background-color: #1b1919;
 }
 
 h1,
@@ -28,11 +28,63 @@ ol,
 li,
 blockquote,
 fieldset {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
+
+/* ------ШАГ-1-------  */
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 21px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content__list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    block-size: 220px;
+    overflow-y: auto;
+}
+
+.content__details {
+    display: flex;
+    flex-direction: column;
+    block-size: 100%;
+    inline-size: 100%;
+    gap: 25px;
+}
+
+/* - Стилизуем скрол.
+Вопрос 1. Это легальный метод? Я просто поставил
+себе задачу, сделать приятный скрол, чтобы он вписывался в общий дизайн.
+
+Вопрос 2. Я поигрался с настройками и смог его вообще убрать. Так можно делать? */
+
+.content__list::-webkit-scrollbar {
+    width: 4px;
+    background-color: #545050;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+/* ------ШАГ-2-------  */
+
+
