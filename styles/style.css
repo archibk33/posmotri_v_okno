@@ -37,13 +37,17 @@ ol {
     list-style: none;
 }
 
-/* ------STAGE-1-------  */
-
 .content {
     display: flex;
     flex-direction: row;
-    align-items: end;
-    gap: 21px;
+    align-items: flex-end;
+    gap: 28px;
+    padding: 260px 28px;
+    inline-size: 1140px;
+}
+
+.content__accent {
+    color: #545050;
 }
 
 .search-form {
@@ -57,7 +61,8 @@ ol {
     display: flex;
     flex-direction: column;
     position: relative;
-    block-size: 220px;
+    align-items: flex-start;
+    block-size: 299px;
     overflow: hidden;
     opacity: 1;
     transition: opacity 0.3s ease; /* Плавное изменение opacity */
@@ -66,16 +71,25 @@ ol {
 .content__list-item {
     display: flex;
     align-items: flex-start;
-    margin-block-end: 30px;
-    inline-size: 389px;
+    margin-block-end: 29px;
+    inline-size: 393px;
 }
 
 .content__list-item:last-child {
     margin-block-end: 0;
 }
 
+.content__card-link {
+    display: block;
+    text-decoration: none;
+    margin: 2px;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+
 .content__list-item:has(.content__card-link_current) {
-    background-color: #545050;
+    background-color: #564f4f;
 }
 
 .content__details {
@@ -109,10 +123,8 @@ ol {
     opacity: 1;
 }
 
-/* ------STAGE-2-------  */
-
 .result__video-container {
-    margin-block-end: 15px;
+    margin-block-end: 13px;
     position: relative;
 }
 
@@ -123,7 +135,6 @@ ol {
     block-size: 379px;
     inline-size: 709px;
     object-fit: cover;
-
 }
 
 /*  <template class="cards-list-item-template">
@@ -140,10 +151,6 @@ ol {
     margin-bottom: 0; /* Убирает отступ у последнего элемента */
 }
 
-.content__list-item:has(.content__card-link_current) {
-    background-color: #231717;
-}
-
 .content__video-card {
     display: flex;
     flex-direction: row;
@@ -151,10 +158,10 @@ ol {
 }
 
 .content__video-card-thumbnail {
-    block-size: 100px;
+    block-size: 102px;
     object-fit: cover;
     object-position: center;
-    inline-size: 189px;
+    inline-size: 193px;
 
 }
 
@@ -165,10 +172,222 @@ ol {
     gap: 7px;
 }
 
-/* ------STAGE-3-------  */
+.title {
+    font-family: "Oswald", sans-serif;
+    font-size: 75px;
+    font-style: normal;
+    color: #fffefe;
+    font-weight: 700;
+    line-height: 93%;
+    text-transform: uppercase;
+    padding-block-start: 3px;
 
+}
 
+.content__accent {
+    color: #575353;
+}
 
+.content__video-card-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    color: #faf7f7;
+    text-transform: uppercase
+}
 
+.content__video-card-description {
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: #fdfcfc;
+    line-height: 18px;
+}
 
+.visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
 
+.search-form__label:hover > .search-form__label-text:not(.visually-hidden),
+.content__card-link:hover .content__video-card-description-container,
+.button:hover {
+    text-decoration: underline;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-form__fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 0;
+}
+
+.search-form__label-text,
+.search-form__fieldset-title {
+    font-family: "Fira Sans Condensed", sans-serif;
+    color: #fcf9f9;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.search-form__submit-button {
+    align-self: end;
+    inline-size: 194px;
+}
+
+.search-form__fieldset:nth-child(2) {
+    block-size: 54px;
+    inline-size: 212px;
+    gap: 7px;
+}
+
+.search-form__label {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.search-form__label:hover {
+    cursor: pointer;
+}
+
+/*При вёрстке текстового поля обращайте внимание
+на управление размерами, границей, цветом текста, семейством шрифта, размером шрифта, фоном.
+Некоторые из этих свойств не наследуются.*/
+
+.search-form__textfield {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 11px;
+    appearance: none;
+    cursor: pointer;
+    inline-size: 225px;
+    background-color: transparent;
+    border-bottom: 1px solid #fdfcfc;
+    line-height: normal;
+    font-weight: 400;
+    font-style: normal;
+    border-top: 1px solid #ffffff;
+    border-right-style: none;
+    block-size: 25px;
+    font-size: 18px;
+    color: #fffdfd;
+    padding: 0;
+    font-family: "Fira Sans Condensed", sans-serif;
+}
+
+.search-form__textfield::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+
+.search-form__checkbox-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    inline-size: 211px;
+}
+
+.search-form__pseudo-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #fff;
+    margin-inline-end: 5px;
+    block-size: 19px;
+    inline-size: 19px;
+}
+
+.content__card-link:focus,
+.search-form__textfield:focus,
+.button:focus {
+    outline: none;
+}
+
+.button:focus-visible {
+    outline-color: #faf5f5;
+    outline-offset: 2px;
+    outline-width: 1px;
+    outline-style: solid;
+}
+
+.content__card-link:focus-visible {
+    outline-color: #fdfcfc;
+    outline-style: solid;
+    outline-width: 1px;
+}
+
+/*
+Лейбл должен получать границу только когда у поля находится в состоянии
+focus-visible, но не focus. Чтобы такое реализовать, можно применить
+хитрую комбинацию псевдоклассов — :has(:focus-visible).
+*/
+
+.search-form__label:has(:focus-visible) {
+    outline-color: #fffdfd;
+    outline-offset: 2px;
+    outline-width: 1px;
+    outline-style: solid;
+}
+
+/*
+Вопрос. Такую комбинацию можно расписать при помощи JS? Управлять состояние элемента DOM
+*/
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+    display: flex;
+    block-size: 15px;
+    content: "";
+    background-color: #fff;
+    inline-size: 15px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    font-family: "Fira Sans Condensed", sans-serif;
+    gap: 9px;
+    block-size: 33px;
+    font-weight: 700;
+    line-height: normal;
+    font-style: normal;
+    font-size: 18px;
+    color: #fdfcfc;
+    border: 1px solid #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.more-button {
+    margin: 1px;
+    inline-size: 400px;
+}
+
+.content__card-link:active,
+.button:active {
+    background-color: #565252;
+}
