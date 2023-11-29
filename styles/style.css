@@ -12,7 +12,7 @@ html {
     inline-size: 1200px;
     block-size: 100%;
     margin: auto;
-    color: #fff;
+    color: #fffefe;
     font-family: 'Fira Sans Condensed', sans-serif;
     font-size: 18px;
     background-color: #1b1919;
@@ -65,7 +65,7 @@ ol {
     block-size: 299px;
     overflow: hidden;
     opacity: 1;
-    transition: opacity 0.3s ease; /* Плавное изменение opacity */
+    transition: opacity 0.3s ease;
 }
 
 .content__list-item {
@@ -86,7 +86,6 @@ ol {
     color: #fafafa;
     cursor: pointer;
 }
-
 
 .content__list-item:has(.content__card-link_current) {
     background-color: #564f4f;
@@ -114,12 +113,12 @@ ol {
 }
 
 .content__list::-webkit-scrollbar-thumb {
-    background-color: #888;
+    background-color: #868686;
     border-radius: 5px;
 }
 
 .content__list:hover {
-    overflow-y: auto; /* Показываем полосу прокрутки при наведении курсора */
+    overflow-y: auto;
     opacity: 1;
 }
 
@@ -148,7 +147,7 @@ ol {
 }
 
 .content__list-item:last-child {
-    margin-bottom: 0; /* Убирает отступ у последнего элемента */
+    margin-bottom: 0;
 }
 
 .content__video-card {
@@ -313,7 +312,7 @@ ol {
     position: relative;
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #fdfcfc;
     margin-inline-end: 5px;
     block-size: 19px;
     inline-size: 19px;
@@ -359,7 +358,7 @@ focus-visible, но не focus. Чтобы такое реализовать, м
     display: flex;
     block-size: 15px;
     content: "";
-    background-color: #fff;
+    background-color: #fdfcfc;
     inline-size: 15px;
 }
 
@@ -377,7 +376,7 @@ focus-visible, но не focus. Чтобы такое реализовать, м
     font-style: normal;
     font-size: 18px;
     color: #fdfcfc;
-    border: 1px solid #fff;
+    border: 1px solid #fcfcfc;
     background-color: transparent;
     cursor: pointer;
 }
