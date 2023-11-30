@@ -9,13 +9,15 @@ html {
 }
 
 .page {
+    display: flex;
+    align-items: center;
     inline-size: 1200px;
     block-size: 100%;
     margin: auto;
     color: #fffefe;
-    font-family: 'Fira Sans Condensed', sans-serif;
     font-size: 18px;
     background-color: #1b1919;
+    font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 h1,
@@ -39,11 +41,9 @@ ol {
 
 .content {
     display: flex;
-    flex-direction: row;
     align-items: flex-end;
-    gap: 28px;
-    padding: 260px 28px;
     inline-size: 1140px;
+    gap: 28px;
 }
 
 .content__accent {
@@ -63,16 +63,7 @@ ol {
     position: relative;
     align-items: flex-start;
     block-size: 299px;
-    overflow: hidden;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-.content__list-item {
-    display: flex;
-    align-items: flex-start;
-    margin-block-end: 29px;
-    inline-size: 393px;
+    overflow: auto;
 }
 
 .content__list-item:last-child {
@@ -83,12 +74,12 @@ ol {
     display: block;
     text-decoration: none;
     margin: 2px;
-    color: #fafafa;
+    color: #ffffff;
     cursor: pointer;
 }
 
-.content__list-item:has(.content__card-link_current) {
-    background-color: #564f4f;
+.content__card-link_current {
+    background-color: #545050;
 }
 
 .content__details {
@@ -107,7 +98,6 @@ ol {
 
 Вопрос 3. Я не смог догадаться, как сделать плавное исчезновение и появление курсора :(. Не подскажете, как сделать? С:
 */
-
 .content__list::-webkit-scrollbar {
     width: 5px;
 }
@@ -115,11 +105,6 @@ ol {
 .content__list::-webkit-scrollbar-thumb {
     background-color: #868686;
     border-radius: 5px;
-}
-
-.content__list:hover {
-    overflow-y: auto;
-    opacity: 1;
 }
 
 .result__video-container {
@@ -143,7 +128,7 @@ ol {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-block-end: 20px;
+    margin-block-end: 25px;
 }
 
 .content__list-item:last-child {
@@ -175,16 +160,15 @@ ol {
     font-family: "Oswald", sans-serif;
     font-size: 75px;
     font-style: normal;
-    color: #fffefe;
+    color: #ffffff;
     font-weight: 700;
     line-height: 93%;
     text-transform: uppercase;
     padding-block-start: 3px;
-
 }
 
 .content__accent {
-    color: #575353;
+    color: #545050;
 }
 
 .content__video-card-title {
@@ -193,8 +177,7 @@ ol {
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
-    color: #faf7f7;
-    text-transform: uppercase
+    color: #ffffff;
 }
 
 .content__video-card-description {
@@ -202,8 +185,14 @@ ol {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    color: #fdfcfc;
+    color: #ffffff;
     line-height: 18px;
+    text-transform: uppercase;
+    /* Спасибо большое за совет! Реально стало красивее. Буквы не налезают на картинку */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 1140px;
 }
 
 .visually-hidden {
@@ -239,7 +228,7 @@ ol {
 .search-form__label-text,
 .search-form__fieldset-title {
     font-family: "Fira Sans Condensed", sans-serif;
-    color: #fcf9f9;
+    color: #ffffff;
     font-size: 18px;
     font-style: normal;
     line-height: normal;
@@ -252,14 +241,14 @@ ol {
 }
 
 .search-form__fieldset:nth-child(2) {
-    block-size: 54px;
-    inline-size: 212px;
-    gap: 7px;
+    display: flex;
+    gap: 5px;
 }
 
 .search-form__label {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: fit-content;
 }
 
@@ -270,7 +259,6 @@ ol {
 /*При вёрстке текстового поля обращайте внимание
 на управление размерами, границей, цветом текста, семейством шрифта, размером шрифта, фоном.
 Некоторые из этих свойств не наследуются.*/
-
 .search-form__textfield {
     display: flex;
     justify-content: start;
@@ -280,15 +268,17 @@ ol {
     cursor: pointer;
     inline-size: 225px;
     background-color: transparent;
-    border-bottom: 1px solid #fdfcfc;
+    border-bottom: 1px solid #ffffff;
     line-height: normal;
     font-weight: 400;
     font-style: normal;
+    /* Вот стили из Figma -  border-top: 1px solid #FFF;
+                             border-bottom: 1px solid #FFF;*/
     border-top: 1px solid #ffffff;
     border-right-style: none;
     block-size: 25px;
     font-size: 18px;
-    color: #fffdfd;
+    color: #ffffff;
     padding: 0;
     font-family: "Fira Sans Condensed", sans-serif;
 }
@@ -300,9 +290,7 @@ ol {
 
 .search-form__checkbox-list {
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    inline-size: 211px;
+    gap: 16px;
 }
 
 .search-form__pseudo-checkbox {
@@ -312,7 +300,7 @@ ol {
     position: relative;
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid #fdfcfc;
+    border: 1px solid #ffffff;
     margin-inline-end: 5px;
     block-size: 19px;
     inline-size: 19px;
@@ -325,14 +313,14 @@ ol {
 }
 
 .button:focus-visible {
-    outline-color: #faf5f5;
+    outline-color: #ffffff;
     outline-offset: 2px;
     outline-width: 1px;
     outline-style: solid;
 }
 
 .content__card-link:focus-visible {
-    outline-color: #fdfcfc;
+    outline-color: #ffffff;
     outline-style: solid;
     outline-width: 1px;
 }
@@ -342,23 +330,24 @@ ol {
 focus-visible, но не focus. Чтобы такое реализовать, можно применить
 хитрую комбинацию псевдоклассов — :has(:focus-visible).
 */
-
 .search-form__label:has(:focus-visible) {
-    outline-color: #fffdfd;
+    outline-color: #ffffff;
     outline-offset: 2px;
     outline-width: 1px;
     outline-style: solid;
 }
-
 /*
-Вопрос. Такую комбинацию можно расписать при помощи JS? Управлять состояние элемента DOM
-*/
+Задание: - На макете при нажатии чекбокса внутри появляется квадрат. Он чуть меньше чекбокса. Мы предлагаем вам реализовать его псевдоэлементом
+для .search-form__pseudo-checkbox. У вас получится непростая комбинация селекторов «псевдоэлемент для первого соседа зажатого чекбокса».
+Подумайте, как такое описать.
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+Решение: - Я погуглил, почитал, поспрашивал. Сделал несколько вариантов, но рабочим оказался именно этот.
+*/
+input[type='checkbox']:checked+.search-form__pseudo-checkbox::before {
     display: flex;
     block-size: 15px;
     content: "";
-    background-color: #fdfcfc;
+    background-color: #ffffff;
     inline-size: 15px;
 }
 
@@ -375,8 +364,8 @@ focus-visible, но не focus. Чтобы такое реализовать, м
     line-height: normal;
     font-style: normal;
     font-size: 18px;
-    color: #fdfcfc;
-    border: 1px solid #fcfcfc;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     background-color: transparent;
     cursor: pointer;
 }
@@ -388,5 +377,5 @@ focus-visible, но не focus. Чтобы такое реализовать, м
 
 .content__card-link:active,
 .button:active {
-    background-color: #565252;
+    background-color: #545050;
 }
