@@ -8,9 +8,14 @@ html {
     block-size: 100%;
 }
 
+
+/*Александр, спасибо большое Вам за классное ревью! Благодаря Вам мой exp качнулся :)
+Желаю Вам легких и беззаботных дедлайнов. И чтобы код на проде никогда не ломался.
+*/
 .page {
     display: flex;
     align-items: center;
+    justify-content: center;
     inline-size: 1200px;
     block-size: 100%;
     margin: auto;
@@ -18,6 +23,7 @@ html {
     font-size: 18px;
     background-color: #1b1919;
     font-family: 'Fira Sans Condensed', sans-serif;
+    padding: 133px 30px;
 }
 
 h1,
@@ -116,8 +122,8 @@ ol {
 
 .result__video {
     object-position: center;
-    block-size: 379px;
-    inline-size: 709px;
+    block-size: 386px;
+    inline-size: 711px;
     object-fit: cover;
 }
 
@@ -152,7 +158,7 @@ ol {
 .content__video-card-description-container {
     display: flex;
     flex-direction: column;
-    inline-size: 200px;
+    inline-size: 206px;
     gap: 7px;
 }
 
@@ -178,6 +184,7 @@ ol {
     font-weight: 700;
     line-height: 100%;
     color: #ffffff;
+    text-transform: uppercase;
 }
 
 .content__video-card-description {
@@ -187,12 +194,11 @@ ol {
     font-weight: 400;
     color: #ffffff;
     line-height: 18px;
-    text-transform: uppercase;
     /* Спасибо большое за совет! Реально стало красивее. Буквы не налезают на картинку */
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 1140px;
+    max-width: 200px;
 }
 
 .visually-hidden {
